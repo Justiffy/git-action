@@ -1,6 +1,9 @@
-name: First CRA project
+name: First CRA project 
 # This workflow is triggered on pushes to the repository.
-on: [push]
+on: 
+  push:
+    branches:
+      - master
 
 jobs:
   build:
