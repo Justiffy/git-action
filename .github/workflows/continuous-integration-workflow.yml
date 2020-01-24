@@ -29,7 +29,7 @@ jobs:
         run: yarn lint
 
       - name: test
-      run: yarn test
+        run: yarn test
 
       - name: Echo the greeting's time
-      run: echo 'The time was ${{ steps.hello.outputs.time }}.'
+        run: echo 'The time was ${{ steps.hello.outputs.time }}.'
