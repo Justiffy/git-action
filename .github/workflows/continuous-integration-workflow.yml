@@ -17,8 +17,8 @@ jobs:
       - uses: actions/cache@v1
         id: cache
         with:
-          path: path/to/dependencies
-          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: install dep
         if: steps.cache.outputs.cache-hit != 'true'
