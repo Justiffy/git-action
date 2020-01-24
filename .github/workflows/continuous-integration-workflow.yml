@@ -40,4 +40,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: build
-          BUILD_SCRIPT: yarn build && npm run build
+          BUILD_SCRIPT: yarn build
