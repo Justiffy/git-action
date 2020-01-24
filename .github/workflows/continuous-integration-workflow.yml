@@ -14,7 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - uses: actions/cache@v1
+      - name: check cache
+        uses: actions/cache@v1
         id: cache
         with:
           path: node_modules
@@ -23,9 +24,12 @@ jobs:
       - name: install dep
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn
-      # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
+
+      -name: Lint
+        run: yarn lint
+
       - name: test
-        run: yarn test
-      # This step prints an output (time) from the previous step's action.
+      run: yarn test
+
       - name: Echo the greeting's time
-        run: echo 'The time was ${{ steps.hello.outputs.time }}.'
+      run: echo 'The time was ${{ steps.hello.outputs.time }}.'
